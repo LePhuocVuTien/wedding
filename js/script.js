@@ -337,12 +337,23 @@ $(document).ready(function() {
 
 	// 07. COUNTDOWN
 	//===================================================================================
-	var theday = new Date();
-	theday = new Date(2023, 5 - 1 /* May */, 28);
-	$('#countdown').countdown({until: theday, format: 'WDHMS'});
-	$('#countdown').countdown($.countdown.regionalOptions['custom-label']);
+	const weddingDate = new Date("2026-03-10T11:00:00+07:00");
 
-	$('#date-countdown').countdown({until: theday, format: 'WDHMS'});
+	// Countdown chính
+	$('#countdown').countdown({
+	until: weddingDate,
+	format: 'WDHMS'
+	});
+
+	// Countdown hiển thị ngày (nếu có)
+	$('#date-countdown').countdown({
+	until: weddingDate,
+	format: 'WDHMS'
+	});
+
+	// Áp dụng label tiếng Việt / custom
+	$('#countdown, #date-countdown')
+	.countdown($.countdown.regionalOptions['custom-label']);
 
 	// 08. MOBILE MENU
 	//==================================================================================

@@ -4,11 +4,22 @@ async function initMaps() {
   await google.maps.importLibrary("maps");
   await google.maps.importLibrary("marker");
 
-  await initMap("bride-party-map-canvas", new google.maps.LatLng(16.435055, 107.760427))
-  await initMap("groom-party-map-canvas", new google.maps.LatLng(16.0474634, 108.2232247))
+  await initMap(
+    "bride-party-map-canvas",
+    new google.maps.LatLng(16.364025, 107.863386),
+    "Nhà hàng Thanh Thanh",
+    "NHÀ GÁI ⏰ 10:30 AM"
+  );
+
+  await initMap(
+    "groom-party-map-canvas",
+    new google.maps.LatLng(16.376144, 107.846131),
+    "Trung tâm tiệc cưới Trung Hải",
+    "NHÀ TRAI ⏰ 11:00 AM"
+  );
 }
 
-async function initMap(mapElementId, center) {
+async function initMap(mapElementId, center, title, infoContent) {
   var mapOptions = {
     zoom: 18,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -23,20 +34,29 @@ async function initMap(mapElementId, center) {
 
   var map = new google.maps.Map(document.getElementById(mapElementId), mapOptions);
 
+  const img = document.createElement("img");
+  img.src = "/images/destination.png"; // icon của bạn
+  img.style.width = "40px";
+  img.style.height = "40px";
+
   const marker = new google.maps.marker.AdvancedMarkerElement({
     map: map,
     position: center,
+    content: img,
   });
 
-  var contentString = '<div>' +
-    'WEDDING PARTY';
-  '</div>';
   const infoWindow = new google.maps.InfoWindow({
-    content: contentString,
+    content: `
+      <div style="font-size:14px">
+        <strong>${title}</strong><br/>
+        ${infoContent}
+      </div>
+    `,
   });
+    
   infoWindow.open({
-    anchor: marker,
-    map,
+    map: map,
+    anchor: marker
   });
 
   marker.addListener("click", () => {

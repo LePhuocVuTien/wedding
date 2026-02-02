@@ -2912,23 +2912,23 @@ footer .image-divider.fixed-height {
 .story-date {
     float: left;
     margin-left: 16px;
-    height: 85px;
-    width: 85px;
-    background-color: #f0394d;
+    height: 90px;
+    width: 90px;
+    background-color: #4e5e93;
     border-radius: 50%;
 }
 
 .story-date .date-only {
-    font-family: 'Oswald', sans-serif;
-    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     color: #FFF;
-    line-height: 30px;
-    margin-top: 16px;
+    line-height: 20px;
+    margin-top: 20px;
 }
 
 .story-date .month-year {
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
     color: #FFF;
 }
 
@@ -2971,7 +2971,8 @@ footer .image-divider.fixed-height {
 }
 
 #end-of-story {
-    margin-top: 130px;
+    margin-top: 10px;
+    height: 800px;
 }
 
 /* ----------------------------------------------*/
