@@ -1,1753 +1,405 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta
-      name="description"
-      content="Vu Tien and Xuan Giang’s Wedding"
-    />
-    <meta name="author" content="www.dethemes.com" />
-    <meta name="ROBOTS" content="NOINDEX" />
-    <title>Vu Tien and Xuan Giang’s Wedding</title>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đám Cưới Vũ Tiến & Xuân Giang</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Menu chính">
+        <ul>
+            <li><a href="#couple" aria-label="Đến phần Cô Dâu và Chú Rể">Cô Dâu & Chú Rể</a></li>
+            <li><a href="#story" aria-label="Đến phần Câu Chuyện">Câu Chuyện</a></li>
+            <li><a href="#event" aria-label="Đến phần Sự Kiện">Sự Kiện</a></li>
+            <li><a href="#map" aria-label="Đến phần Địa Điểm">Địa Điểm</a></li>
+            <li><a href="#gallery" aria-label="Đến phần Album Ảnh">Album Ảnh</a></li>
+            <li><a href="#donate" aria-label="Đến phần Mừng Cưới">Mừng Cưới</a></li>
+        </ul>
+    </nav>
 
-    <link rel="icon" href="images/favicon.jpg" />
-    <!-- Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="css/bootstrap/bootstrap.min.css"
-      type="text/css"
-      media="screen"
-    />
-    <!-- Pace -->
-    <link rel="stylesheet" href="css/preloader.css" media="screen" />
-    <link rel="stylesheet" href="css/preloader-default.css" media="screen" />
-    <!-- Flexslider -->
-    <link
-      rel="stylesheet"
-      href="css/flexslider/flexslider.css"
-      type="text/css"
-    />
-    <!-- Animate -->
-    <link rel="stylesheet" href="css/animate/animate.css" type="text/css" />
-    <!-- Countdown -->
-    <link
-      rel="stylesheet"
-      href="css/countdown/jquery.countdown.css"
-      type="text/css"
-    />
-    <!-- Magnific Popup -->
-    <link
-      rel="stylesheet"
-      href="css/magnific-popup/magnific-popup.css"
-      type="text/css"
-    />
-    <!-- Owl Carousel -->
-    <link
-      rel="stylesheet"
-      href="css/owlcarousel/owl.carousel.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="css/owlcarousel/owl.theme.css"
-      type="text/css"
-    />
-    <!-- Icon -->
-    <link
-      rel="stylesheet"
-      href="css/fonts/fontello/css/fontello.css"
-      type="text/css"
-      media="screen"
-    />
-    <!-- Font -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Oswald"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Arvo:400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Pacifico"
-      rel="stylesheet"
-      type="text/css"
-    />
-
-    <!-- Theme CSS -->
-    <link href="css/style.css" rel="stylesheet" media="screen" />
-
-    <!-- Skin CSS -->
-    <!-- <link href="css/skin/light-teal/light-teal.css" rel="stylesheet" media="screen"> -->
-    <!-- <link href="css/skin/light-teal/light-teal-reverse-navbar.css" rel="stylesheet" media="screen"> -->
-    <!-- <link href="css/skin/pattern/pattern-1.css" rel="stylesheet" media="screen"> -->
-  </head>
-
-  <body class="outside-bottom-bar-page">
-    <!--PRELOADER-->
-    <div id="preloader">
-      <div class="alignment">
-        <div class="v-align center-middle">
-          <!-- LEFT HEART -->
-          <div class="heart-animation">
-            <i class="de-icon-heart"></i>
-          </div>
-
-          <!-- RIGHT HEART -->
-          <div class="heart-animation-reverse">
-            <i class="de-icon-heart"></i>
-          </div>
+    <!-- Hero Section with Background Image, Countdown & Falling Petals -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="falling-petals" id="fallingPetals"></div>
+        
+        <div class="hero-content">
+            <div class="subtitle">Trân trọng kính mời</div>
+            <h1>Vũ Tiến & Xuân Giang</h1>
+            <div class="decorative-line"></div>
+            <div class="date">10 • 03 • 2026</div>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Ngày</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Giờ</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Phút</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Giây</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!--END of PRELOADER-->
-
-    <!-- MAIN SLIDER -->
-    <section id="main-slider" class="flexslider fullscreen">
-      <!-- MAIN SLIDER TITLE OUTTER WRAPPER -->
-      <div class="slide-title-outter-wrapper">
-        <!-- MAIN SLIDER TITLE INNER WRAPPER -->
-        <div class="slide-title-inner-wrapper">
-          <!-- TITLE 2 -->
-          <div class="slide-title align-middle">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-offset-3 col-md-6 animation delay1 fadeInUp">
-                  <div id="invited">You're Invited</div>
-                  <div class="banner-text withlove medium light">
-                    <h1>WE ARE GETTING MARRIED</h1>
-                  </div>
-                  <div id="banner-date">- MARCH 8th, 2026 -</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        
+        <div class="scroll-indicator" onclick="document.getElementById('couple').scrollIntoView({behavior: 'smooth'})">
+            <svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
         </div>
-        <!-- END of MAIN SLIDER TITLE INNER WRAPPER -->
-      </div>
-      <!-- END of MAIN SLIDER TITLE OUTTER WRAPPER -->
-
-      <!-- MAIN SLIDER IMAGES -->
-
-      <ul class="slides">
-        <li>
-          <!-- SLIDE IMAGE -->
-          <div
-            data-stellar-ratio="0.4"
-            class="slide-image"
-            style="
-              background-image: url(images/heading-background.jpg);
-              background-position: center;
-            "
-          ></div>
-
-          <!-- SLIDE OVERLAY -->
-          <div class="slide-overlay" style="opacity: 0"></div>
-        </li>
-      </ul>
-      <!-- END of MAIN SLIDER IMAGES -->
-
-      <!-- NAVIGATION -->
-      <header id="nav-header">
-        <nav
-          id="nav-bar"
-          class="bottom-bar outside fluid-width block-color nav-center sticky-nav animation fadeIn"
-        >
-          <div id="nav-wrapper">
-            <div class="logo-wrapper">
-              <!-- CSS LOGO -->
-              <a href="index.html">
-                <div class="css-logo rounded">
-                  <div class="css-logo-text">
-                    <strong>H</strong><i class="de-icon-heart-1"></i><strong>T</strong>
-                  </div>
-                </div>
-              </a>
-
-            </div>
-            <div id="mobile-nav">
-              <i class="de-icon-menu"></i>
-            </div>
-
-            <ul id="nav-menu" class="nav-smooth-scroll">
-              <li class="first-child">
-                <a href="#main-slider">HOME</a>
-              </li>
-              <li>
-                <a href="#our-story">STORY</a>
-              </li>
-              <li>
-                <a href="#where-when">WHERE &amp; WHEN</a>
-              </li>
-              <li class="first-child logo-item">
-                <!-- LOGO -->
-                <div class="logo-wrapper">
-                  <!-- CSS LOGO -->
-                  <a href="index.html">
-                    <div class="css-logo rounded">
-                      <div class="css-logo-text">
-                        <strong>H</strong><i class="de-icon-heart-1"></i
-                      ><strong>T</strong>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <!-- END of LOGO -->
-              </li>
-              <li class="first-child">
-                <a href="#gallery-section">GALLERY</a>
-              </li>
-              <li >
-                <a href="#more-events">EVENTS</a>
-              </li>
-              <li>
-                <a href="#rsvp-section">RSVP</a>
-              </li>
-            </ul>
-
-            <div class="clearboth"></div>
-          </div>
-        </nav>
-      </header>
-      <!-- END of NAVIGATION -->
     </section>
-    <!-- ENF of MAIN SLIDER -->
 
-    <!--CONTENT SECTION-->
-    <section id="content">
-      <!--COUPLE SECTION-->
-      <section id="couple">
-        <div class="container">
-          <div class="row">
-            <!-- SECTION CONTENT -->
-            <div class="col-md-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeInLeft">
-                <!--PHOTO-->
-                <img
-                  src="images/him.JPG"
-                  alt=""
-                  class="hover-animation image-zoom-in"
-                  loading="lazy"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/him.jpeg"
-                        class="magnific-zoom"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-
-                      <a href="https://www.facebook.com/tien.lephuocvu" target="_blank">
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-link"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
+    <!-- Couple Section -->
+    <section id="couple">
+        <div class="floral-corner top-left">✿</div>
+        <div class="floral-corner top-right">✿</div>
+        <h2 class="section-title animate-on-scroll">Cô Dâu & Chú Rể</h2>
+        <p class="section-subtitle animate-on-scroll">Hai trái tim, một tình yêu</p>
+        
+        <div class="couple-container">
+            <div class="couple-card">
+                <div class="couple-image-wrapper">
+                    <img src="images/groom.jpeg" alt="Chú rể Lê Phước Vũ Tiến" class="couple-image" loading="lazy" 
+                         onerror="this.onerror=null; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.style.background='var(--beige)'; this.style.color='var(--text-light)'; this.style.fontStyle='italic'; this.innerHTML='Ảnh Chú Rể';">
                 </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-
-              <div class="his-her-name">
-                <h2 class="text-center">
-                  <span class="last-name">&nbsp;Vũ Tiến&nbsp;</span>
-                </h2>
-                <div class="heart-wrapper">
-                  <div class="de-icon circle medium-size custom-heart">
-                    <i class="de-icon-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeInRight">
-                <!--PHOTO-->
-                <img
-                  src="images/her.JPG"
-                  alt=""
-                  class="hover-animation image-zoom-in"
-                  loading="lazy"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/her.jpeg"
-                        class="magnific-zoom"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-
-                      <a href="https://www.facebook.com/giang.le.169405" target="_blank">
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-link"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-
-              <div class="his-her-name">
-                <h2 class="text-center">
-                  <span class="last-name">&nbsp;Xuân Giang&nbsp;</span>
-                </h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PHOTO DIVIDER -->
-      <section id="photo-divider">
-        <div
-          class="image-divider fixed-height"
-          style="
-            background-image: url(images/photo-divider-1.svg);
-            height: 400px;
-          "
-          data-stellar-background-ratio="0.3"
-        ></div>
-      </section>
-
-      <!-- OUR STORY SECTION -->
-      <section id="our-story">
-        <div class="container">
-          <!-- ROW-1 -->
-          <div class="row">
-            <!-- SECTION TITLE -->
-            <div class="col-sm-12 col-md-offset-2 col-md-8 text-center">
-              <div class="section-title animation fadeInUp">
-                <h2>OUR <img src="images/heart-icon.png" alt="" /> STORY</h2>
-              </div>
-            </div>
-          </div>
-          <!-- END of ROW-1 -->
-
-          <!-- STORY ROW-1-->
-          <div class="row story-row">
-            <div class="col-sm-12 col-md-offset-1 col-md-4 text-center">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation delay1 fadeInLeft">
-                <!--PHOTO-->
-                <img
-                  src="images/story-1.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-in"
-                  loading="lazy"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/story-1.jpeg"
-                        class="magnific-zoom"
-                        title="Our First Met"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-
-            <div
-              class="col-sm-12 col-md-2 text-center story-date-wrapper animation fadeIn"
-            >
-              <div class="arrow-left"></div>
-              <div class="story-date">
-                <div class="date-only">09/08</div>
-                <div class="month-year">2025</div>
-              </div>
-              <div class="arrow-right"></div>
-              <div class="clearboth"></div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 animation delay1 fadeInRight">
-              <h3>Lần đầu mình gặp nhau</h3>
-              <p>
-                Một tai nạn nhỏ ở Bình An, khi cô ấy bị thương vì tai nạn giao thông. 
-                Mình đưa cô ấy về nhà — và từ lần gặp đầu tiên ấy, một câu chuyện, một mối duyên đã bắt đầu..
-              </p>
-            </div>
-
-            <div class="vertical-line"></div>
-          </div>
-          <!-- END of STORY ROW-1 -->
-
-          <!-- STORY ROW-2-->
-          <div class="row story-row">
-            <div class="col-sm-12 col-md-4 col-md-push-6 text-center">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation delay1 fadeInLeft">
-                <!--PHOTO-->
-                <img
-                  src="images/story-2.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-in"
-                  loading="lazy"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/story-2.jpeg"
-                        class="magnific-zoom"
-                        title="Our First Dating"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-
-            <div
-              class="col-sm-12 col-md-2 text-center story-date-wrapper animation fadeIn"
-            >
-              <div class="arrow-left"></div>
-              <div class="story-date">
-                <div class="date-only">31/08</div>
-                <div class="month-year">2025</div>
-              </div>
-              <div class="arrow-right"></div>
-              <div class="clearboth"></div>
-            </div>
-
-            <div
-              class="col-sm-12 col-md-4 col-md-pull-6 animation delay1 fadeInRight"
-            >
-              <h3>Lần đầu hẹn hò</h3>
-              <p>
-                Sau những cuộc trò chuyện và khoảng thời gian tìm hiểu, mình đã mở lời hẹn hò với cô ấy trong một buổi xem phim Mưa Đỏ tại Cinema Huế. 
-                Từ khoảnh khắc ấy, mọi cảm xúc trở nên rõ ràng hơn — và chúng mình biết, đây không còn là sự tình cờ.
-              </p>
-            </div>
-
-            <div class="vertical-line"></div>
-          </div>
-          <!-- END of STORY ROW-2 -->
-
-          <!-- STORY ROW-3-->
-          <div class="row story-row">
-            <div class="col-md-offset-1 col-md-4 text-center">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation delay1 fadeInLeft">
-                <!--PHOTO-->
-                <img
-                  src="images/story-3.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-in"
-                  loading="lazy"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/story-3.jpeg"
-                        class="magnific-zoom"
-                        title="Becoming a Couple"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-
-            <div
-              class="col-md-2 text-center story-date-wrapper animation fadeIn"
-            >
-              <div class="arrow-left"></div>
-              <div class="story-date">
-                <div class="date-only">04/10</div>
-                <div class="month-year">2025</div>
-              </div>
-              <div class="arrow-right"></div>
-              <div class="clearboth"></div>
-            </div>
-
-            <div class="col-md-4 animation delay1 fadeInRight">
-              <h3>Chuyến du dich đầu tiên cùng nhau</h3>
-              <p>
-                Chuyến du lịch đầu tiên của chúng mình là một lần đi săn mây ở Tak Pổ — nơi những áng mây sớm mai trôi chậm trên đỉnh núi, 
-                chứng kiến hai đứa bắt đầu quen với việc có nhau trong từng bước đi, từng khoảnh khắc, và trong mọi hành trình về sau.
-              </p>
-            </div>
-
-            <div class="vertical-line"></div>
-          </div>
-          <!-- END of STORY ROW-3 -->
-
-          <!-- STORY ROW-4 -->
-          <div class="row story-row">
-            <div class="col-sm-12 col-md-4 col-md-push-6 text-center">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation delay1 fadeInLeft">
-                <!--PHOTO-->
-                <img
-                  src="images/story-4.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-in"
-                  loading="lazy"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/story-4.jpeg"
-                        class="magnific-zoom"
-                        title="The Proposal"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-
-            <div
-              class="col-sm-12 col-md-2 text-center story-date-wrapper animation fadeIn"
-            >
-              <div class="arrow-left"></div>
-              <div class="story-date">
-                <div class="date-only">01/11</div>
-                <div class="month-year">2026</div>
-              </div>
-              <div class="arrow-right"></div>
-              <div class="clearboth"></div>
-            </div>
-
-            <div
-              class="col-sm-12 col-md-4 col-md-pull-6 animation delay1 fadeInRight"
-            >
-              <h3>Khoảnh khắc ước hẹn bên nhau</h3>
-              <p>
-                Chúng mình cùng nhau đến Đà Nẵng, và trong một đêm trăng thanh bên bờ biển, giữa tiếng sóng vỗ dịu dàng, 
-                tôi đã trao cho cô ấy chiếc nhẫn — minh chứng cho tình yêu chân thành mà tôi dành trọn cho cô ấy. 
-                Cô ấy mỉm cười nhận lấy — và khoảnh khắc ấy trở thành dấu mốc cho tình yêu của chúng tôi.
-              </p>
-            </div>
-
-            <div class="vertical-line"></div>
-          </div>
-          <!-- END of STORY ROW-4 -->
-
-          <!-- STORY ROW-5-->
-          <div class="row story-row">
-            <div class="col-md-offset-1 col-md-4 text-center">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation delay1 fadeInLeft">
-                <!--PHOTO-->
-                <img
-                  src="images/story-5.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-in"
-                  loading="lazy"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/story-5.jpeg"
-                        class="magnific-zoom"
-                        title="Our Engagement"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-
-            <div
-              class="col-md-2 text-center story-date-wrapper animation fadeIn"
-            >
-              <div class="arrow-left"></div>
-              <div class="story-date">
-                <div class="date-only">31/11</div>
-                <div class="month-year">2025</div>
-              </div>
-              <div class="arrow-right"></div>
-              <div class="clearboth"></div>
-            </div>
-
-            <div class="col-md-4 animation delay1 fadeInRight">
-              <h3>Lễ đính hôn</h3>
-              <p>
-                Lễ đính hôn của chúng tôi được tổ chức trong sự chứng kiến của gia đình hai bên và những người bạn thân thiết. 
-                Khoảnh khắc thiêng liêng ấy đã trở thành dấu mốc quan trọng, mở ra hành trình gắn kết và cùng nhau hướng tới hôn nhân.
-              </p>
-            </div>
-
-            <div class="vertical-line"></div>
-          </div>
-          <!-- END of STORY ROW-5 -->
-
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div id="end-of-story" class="animation fadeInUp">
-                <h2>Và hôm nay… hai chúng tôi về chung một nhà.</h2>
-                <div class="photo-item-getting-married frame-border animation delay1 fadeInLeft mx-auto">
-                <!--PHOTO-->
-                <img
-                  src="images/getting-married.png"
-                  alt=""
-                  class="hover-animation image-zoom-in"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END of CONTAINER -->
-      </section>
-
-      <!-- WHERE WHEN SECTION -->
-      <section id="where-when">
-        <div class="container">
-          <!-- ROW-1 -->
-          <div class="row">
-            <!-- SECTION TITLE -->
-            <div class="col-md-offset-2 col-md-8 text-center">
-              <div class="section-title animation fadeInUp">
-                <h2>WHERE <span class="and">&amp;</span> WHEN</h2>
-
-                <h3>Chúng tôi trân trọng thông báo lễ thành hôn của chúng tôi</h3>
-                <h4>Lễ cưới sẽ diễn ra trong hai ngày:  </h4>
-                <h5>Ngày 08/03/2026 (nhằm 20/01/2026 âm lịch) tại tư gia cô dâu – Huế.</h5>
-                <h5>Ngày 10/03/2026 (nhằm 22/01/2026 âm lịch) tại tư gia chú rể – Huế.</h5>
-              </div>
-            </div>
-          </div>
-          <!-- END of ROW-1 -->
-
-        <!-- ROW-2 -->
-        <div class="row">
-
-          <h2>Tiệc cưới sẽ được tổ chức tại:</h2>
-
-          <div class="col-md-12 text-center">
-            <div class="banner-text dark full animation fadeIn">
-              <div class="row align-items-center">
-
-                <!-- DATE -->
-                <div class="col-md-4">
-                  <h3>Chủ nhật, 08 / 03 / 2025</h3>
-                  <h5>Nhằm ngày 20 tháng 1 năm Bính Ngọ</h5>
-                </div>
-
-                <!-- EVENT -->
-                <div class="col-md-4">
-                  <div class="border-column">
-                    <h3>Tiệc Nhà Gái</h3>
-                  </div>
-                </div>
-
-                <!-- LOCATION -->
-                <div class="col-md-4">
-                  <h3>📍 Nhà hàng Thanh Thanh</h3>
-                  <h5>Đội 7, thôn Giang Chế, xã Vinh Lộc, TP Huế</h5>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END of ROW-2 -->
-
-          <!-- ROW-3 -->
-          <div class="animation fadeIn">
-            <div
-              id="bride-party-map-canvas"
-              style="border: 15px solid #fff; margin-top: 20px"
-            ></div>
-          </div>
-          <!-- END of ROW-3 -->
-
-          <!-- ROW-4 -->
-          <div class="row">
-            <!-- SECTION TITLE -->
-            <div class="col-md-12 text-center">
-              <div class="banner-text dark full animation fadeIn">
-
-                <!-- DATE -->
-                <div class="col-md-4">
-                  <h3>
-                    <h3>Thứ 3, ngày 10/ 03/ 2026</h3>
-                    <h5>Nhằm ngày 22 tháng 1 năm Bính Ngọ</h5>
-                  </h3>
-                </div>
-
-                <!-- EVENT -->
-                <div class="col-md-4">
-                  <div class="border-column">
-                    <h3>Tiệc Nhà Trai</h3>
-                  </div>
-                </div>
-
-                <!-- LOCATION -->
-                <div class="col-md-4">
-                    <h3>📍 Nhà hàng tiệc cưới Trung Hải</h3>
-                    <h5>QL49B, thôn Phụng Chánh 1, xã Vinh Lộc, TP. Huế</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END of ROW-4 -->
-
-          <!-- ROW-5 -->
-          <div class="animation fadeIn">
-            <div
-              id="groom-party-map-canvas"
-              style="border: 15px solid #fff; margin-top: 20px"
-            ></div>
-          </div>
-          <!-- END of ROW-5 -->
-        </div>
-      </section>
-
-      <section id="attending">
-        <div
-          class="image-divider auto-height"
-          style="background-image: url(images/slide-image-2.jpeg)"
-          data-stellar-background-ratio="0.3"
-        >
-          <div class="divider-overlay"></div>
-
-          <div class="container">
-            <div class="row">
-              <div class="col-md-offset-2 col-md-8 text-center">
-                <div
-                  class="banner-text withlove large light animation fadeInUp"
-                >
-                  <h2 class="h2">Thật hạnh phúc nếu có sự tham gia của bạn</h2>
-                </div>
-
-                <div class="text-center animation fadeInUp">
-                  <p>
-                    Sự hiện diện của Quý vị là niềm vinh hạnh cho ngày trọng đại của chúng tôi.
-                    Kính mong Quý vị vui lòng xác nhận tham dự bằng cách nhấn vào nút RSVP bên dưới..
-                  </p>
-                </div>
-
-                <div class="text-center">
-                  <a
-                    href="#rsvp-section"
-                    class="smooth-scroll de-button outline medium animation fadeInUp"
-                  >
-                    RSVP
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- GALLERY SECTION -->
-      <!-- GALLERY SECTION -->
-      <section id="gallery-section">
-        <div class="container">
-          <!-- ROW-1 -->
-          <div class="row">
-            <!-- SECTION TITLE -->
-            <div class="col-md-offset-2 col-md-8 text-center">
-              <div class="section-title animation fadeInUp">
-                <h2>OUR <img src="images/heart-icon.png" alt="" /> GALLERY</h2>
-                <p style="margin-bottom: 15px; line-height: 1.6;">
-                  Một khoảnh khắc được lưu giữ là một kỷ niệm vĩnh cửu. 
-                  Chúng tôi trân quý từng ánh nhìn, từng nụ cười và từng cảm xúc mà quý vị đã sẻ chia trong ngày trọng đại của chúng tôi.
+                <h3 class="couple-name">Lê Phước Vũ Tiến</h3>
+                <p class="couple-role">Chú Rể</p>
+                <p class="couple-bio">
+                    Con trai của ông Lê Trọng Phú và bà Lê Thị Thanh Xuân.
+                    Một người con trai trưởng thành, trách nhiệm và luôn yêu thương gia đình.
                 </p>
-                <p style="margin-bottom: 15px; line-height: 1.6;">
-                  Xin hãy cùng lưu giữ những giây phút nhiệm màu ấy bằng cách chia sẻ những bức ảnh quý giá của quý vị trên mạng xã hội.
+            </div>
+
+            <div class="couple-card">
+                <div class="couple-image-wrapper">
+                    <img src="images/bride.jpeg" alt="Cô dâu Lê Thị Xuân Giang" class="couple-image" loading="lazy"
+                         onerror="this.onerror=null; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.style.background='var(--beige)'; this.style.color='var(--text-light)'; this.style.fontStyle='italic'; this.innerHTML='Ảnh Cô Dâu';">
+                </div>
+                <h3 class="couple-name">Lê Thị Xuân Giang</h3>
+                <p class="couple-role">Cô Dâu</p>
+                <p class="couple-bio">
+                    Con gái của ông Lê Hội và bà Trần Thị Phượng.
+                    Một cô gái dịu dàng, hiền thục và luôn mang lại niềm vui cho mọi người xung quanh.
                 </p>
-                <p style="margin-bottom: 40px; line-height: 1.6;">
-                  Mỗi bức ảnh là một mảnh ghép yêu thương, ghi dấu niềm hạnh phúc và sự ấm áp mà chúng tôi may mắn được đón nhận trong ngày nên duyên. 
-                  Chúng tôi vô cùng mong đợi và trân trọng từng kỷ niệm đẹp mà quý vị đã ghi lại.
-                </p>
-              </div>
             </div>
-          </div>
-          <!-- END of ROW-1 -->
-
-          <div class="row">
-            <!--GALLERY-ITEM-1-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-1.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-1.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 1"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-1-->
-
-            <!--GALLERY-ITEM-2-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-2.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-2.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 2"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-2-->
-
-            <!--GALLERY-ITEM-3-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-3.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-3.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 3"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-3-->
-
-            <!--GALLERY-ITEM-4-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-4.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-4.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 4"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-4-->
-
-            <!--GALLERY-ITEM-5-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-5.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-5.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 5"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-5-->
-
-            <!--GALLERY-ITEM-6-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-6.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-6.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 6"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-6-->
-
-            <!--GALLERY-ITEM-7-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-7.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-7.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 7"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-7-->
-
-            <!--GALLERY-ITEM-8-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-8.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-8.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 8"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-8-->
-
-            <!--GALLERY-ITEM-9-->
-            <div class="col-md-4 col-sm-6">
-              <!--PHOTO-ITEM-->
-              <div class="photo-item frame-border animation fadeIn" style="margin-bottom: 30px;">
-                <!--PHOTO-->
-                <img
-                  src="images/gallery-9.jpeg"
-                  alt=""
-                  class="hover-animation image-zoom-rotate"
-                  loading="lazy"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-
-                <!--PHOTO OVERLAY-->
-                <div
-                  class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                ></div>
-                <!--END of PHOTO OVERLAY-->
-
-                <!--ICON LINK-->
-                <div
-                  class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                >
-                  <div class="alignment">
-                    <div class="v-align center-middle">
-                      <a
-                        href="images/gallery-9.jpeg"
-                        class="magnific-zoom-gallery"
-                        title="Gallery 9"
-                      >
-                        <div class="de-icon circle light medium-size inline">
-                          <i class="de-icon-zoom-in"></i>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!--END of ICON LINK-->
-              </div>
-              <!--END of PHOTO-ITEM-->
-            </div>
-            <!--END of GALLERY-ITEM-9-->
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section id="dont-miss-it">
-        <div
-          class="image-divider auto-height"
-          style="background-image: url(images/slide-image-3.jpeg)"
-          data-stellar-background-ratio="0.3"
-        >
-          <div class="container">
-            <div class="row">
-              <div class="col-md-offset-2 col-md-8">
-                <h2
-                  id="dont-miss-it-title"
-                  class="text-center animation fadeInUp"
-                  style="margin-bottom: 25px;"
-                >
-                  Đếm Ngược Đến Ngày Trọng Đại
-                </h2>
+    <!-- Story Timeline -->
+    <section id="story">
+        <div class="floral-corner bottom-left">✿</div>
+        <div class="floral-corner bottom-right">✿</div>
+        <h2 class="section-title animate-on-scroll">Câu Chuyện Tình Yêu</h2>
+        <p class="section-subtitle animate-on-scroll">Hành trình của chúng tôi</p>
 
-                <div class="text-center animation fadeInUp">
-                  <p style="font-size: 18px; line-height: 1.8; margin-bottom: 15px;">
-                    Chúng tôi rất mong được đón tiếp quý vị trong ngày trọng đại nhất cuộc đời!
-                  </p>
-                  <p style="font-size: 16px; line-height: 1.7; margin-bottom: 30px;">
-                    Hãy cùng chúng tôi chào đón khoảnh khắc thiêng liêng khi hai trái tim hòa làm một, 
-                    bắt đầu hành trình mới với tư cách vợ chồng. 
-                    Sự hiện diện của quý vị sẽ là món quà ý nghĩa nhất dành cho chúng tôi.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-offset-3 col-md-6">
-                <div
-                  id="date-countdown"
-                  class="circle-countdown animation fadeInUp"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-   <!-- MORE EVENTS SECTION -->
-      <section id="more-events">
-        <div class="container">
-          <!-- ROW-1 -->
-          <div class="row">
-            <!-- SECTION TITLE -->
-            <div class="col-md-offset-2 col-md-8 text-center">
-              <div class="section-title animation fadeInUp">
-                <h2>CÁC <img src="images/heart-icon.png" alt="" /> SỰ KIỆN</h2>
-              </div>
-            </div>
-          </div>
-          <!-- END of ROW-1 -->
-
-          <!-- ROW-2 -->
-          <div class="row">
-            <div class="col-md-12">
-              <!-- EVENTS CAROUSEL -->
-              <div id="events-carousel" class="owl-carousel">
-                <!-- ITEM-1 -->
-                <div class="item">
-                  <!--PHOTO-ITEM-->
-                  <div class="photo-item animation fadeIn">
-                    <!--PHOTO-->
-                    <img
-                      src="images/more-events-1.jpeg"
-                      alt=""
-                      class="hover-animation image-zoom-in"
-                      loading="lazy"
-                    />
-
-                    <!--PHOTO OVERLAY-->
-                    <div
-                      class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                    ></div>
-                    <!--END of PHOTO OVERLAY-->
-
-                    <!--ICON LINK-->
-                    <div
-                      class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                    >
-                      <div class="alignment">
-                        <div class="v-align center-middle">
-                          <a
-                            href="images/more-events-1.jpeg"
-                            class="magnific-zoom"
-                            title="Tiệc Trước Đám Cưới"
-                          >
-                            <div
-                              class="de-icon circle light medium-size inline"
-                            >
-                              <i class="de-icon-zoom-in"></i>
-                            </div>
-                          </a>
-
-                          <a href="#">
-                            <div
-                              class="de-icon circle light medium-size inline"
-                            >
-                              <i class="de-icon-link"></i>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="story-image-wrapper">
+                        <img src="images/story-1.jpeg" alt="Lần đầu gặp gỡ" class="story-image" loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'story-image-placeholder\'>📷 Lần đầu gặp gỡ<br>Thêm ảnh: images/story-1.jpeg</div>';">
                     </div>
-                    <!--END of ICON LINK-->
-                  </div>
-                  <!--END of PHOTO-ITEM-->
-
-                  <!-- TITLE & EXCERPT -->
-                  <div class="title-excerpt animation fadeIn">
-                    <h3><a href="#">TIỆC TRƯỚC ĐÁM CƯỚI</a></h3>
-                    <p style="line-height: 1.7;">
-                      Một buổi tiệc vui vẻ để khởi đầu cho mùa cưới và cùng nhau đón chờ ngày trọng đại với tâm trạng phấn khởi nhất.
+                    <h3 class="timeline-title">Lần Đầu Gặp Gỡ</h3>
+                    <p class="timeline-text">
+                        Một tai nạn nhỏ ở Bình An đã đưa hai chúng tôi đến với nhau. 
+                        Khoảnh khắc anh đưa em về nhà đã khởi nguồn cho một câu chuyện tình đẹp.
                     </p>
-                  </div>
-                  <!-- END of TITLE & EXCERPT -->
                 </div>
-                <!--END of ITEM-1-->
+                <div class="timeline-date">09/08/2025</div>
+            </div>
 
-                <!-- ITEM-2 -->
-                <div class="item">
-                  <!--PHOTO-ITEM-->
-                  <div class="photo-item animation fadeIn">
-                    <!--PHOTO-->
-                    <img
-                      src="images/more-events-2.jpeg"
-                      alt=""
-                      class="hover-animation image-zoom-in"
-                      loading="lazy"
-                    />
-
-                    <!--PHOTO OVERLAY-->
-                    <div
-                      class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                    ></div>
-                    <!--END of PHOTO OVERLAY-->
-
-                    <!--ICON LINK-->
-                    <div
-                      class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                    >
-                      <div class="alignment">
-                        <div class="v-align center-middle">
-                          <a
-                            href="images/more-events-2.jpeg"
-                            class="magnific-zoom"
-                            title="Tiệc Nhà Gái"
-                          >
-                            <div
-                              class="de-icon circle light medium-size inline"
-                            >
-                              <i class="de-icon-zoom-in"></i>
-                            </div>
-                          </a>
-
-                          <a href="#">
-                            <div
-                              class="de-icon circle light medium-size inline"
-                            >
-                              <i class="de-icon-link"></i>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="story-image-wrapper">
+                        <img src="images/story-2.jpeg" alt="Lần đầu hẹn hò" class="story-image" loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'story-image-placeholder\'>📷 Lần đầu hẹn hò<br>Thêm ảnh: images/story-2.jpeg</div>';">
                     </div>
-                    <!--END of ICON LINK-->
-                  </div>
-                  <!--END of PHOTO-ITEM-->
-
-                  <!-- TITLE & EXCERPT -->
-                  <div class="title-excerpt animation fadeIn">
-                    <h3><a href="#">TIỆC NHÀ GÁI</a></h3>
-                    <p style="line-height: 1.7;">
-                      Sự kiện do gia đình nhà gái tổ chức để đón tiếp họ hàng, bạn bè và chia vui cùng gia đình. Địa điểm tổ chức tại Huế.
+                    <h3 class="timeline-title">Lần Đầu Hẹn Hò</h3>
+                    <p class="timeline-text">
+                        Sau những buổi trò chuyện tìm hiểu, chúng tôi đã có buổi hẹn hò đầu tiên 
+                        tại rạp Cinema Huế xem phim "Mưa Đỏ". Từ đó, mọi cảm xúc trở nên rõ ràng hơn.
                     </p>
-                  </div>
-                  <!-- END of TITLE & EXCERPT -->
                 </div>
-                <!--END of ITEM-2-->
+                <div class="timeline-date">31/08/2025</div>
+            </div>
 
-                <!-- ITEM-3 -->
-                <div class="item">
-                  <!--PHOTO-ITEM-->
-                  <div class="photo-item animation fadeIn">
-                    <!--PHOTO-->
-                    <img
-                      src="images/more-events-3.jpeg"
-                      alt=""
-                      class="hover-animation image-zoom-in"
-                      loading="lazy"
-                    />
-
-                    <!--PHOTO OVERLAY-->
-                    <div
-                      class="layer wh100 hidden-black-overlay hover-animation fade-in"
-                    ></div>
-                    <!--END of PHOTO OVERLAY-->
-
-                    <!--ICON LINK-->
-                    <div
-                      class="layer wh100 hidden-link hover-animation delay1 fade-in"
-                    >
-                      <div class="alignment">
-                        <div class="v-align center-middle">
-                          <a
-                            href="images/more-events-3.jpeg"
-                            class="magnific-zoom"
-                            title="Tiệc Nhà Trai"
-                          >
-                            <div
-                              class="de-icon circle light medium-size inline"
-                            >
-                              <i class="de-icon-zoom-in"></i>
-                            </div>
-                          </a>
-
-                          <a href="#">
-                            <div
-                              class="de-icon circle light medium-size inline"
-                            >
-                              <i class="de-icon-link"></i>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="story-image-wrapper">
+                        <img src="images/story-3.jpeg" alt="Du lịch cùng nhau" class="story-image" loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'story-image-placeholder\'>📷 Du lịch cùng nhau<br>Thêm ảnh: images/story-3.jpeg</div>';">
                     </div>
-                    <!--END of ICON LINK-->
-                  </div>
-                  <!--END of PHOTO-ITEM-->
-
-                  <!-- TITLE & EXCERPT -->
-                  <div class="title-excerpt animation fadeIn">
-                    <h3><a href="#">TIỆC NHÀ TRAI</a></h3>
-                    <p style="line-height: 1.7;">
-                      Sự kiện do gia đình nhà trai tổ chức, bao gồm nghi lễ cưới truyền thống và tiệc mừng. Địa điểm tổ chức tại Đà Nẵng.
+                    <h3 class="timeline-title">Du Lịch Cùng Nhau</h3>
+                    <p class="timeline-text">
+                        Chuyến săn mây đầu tiên ở Tak Pổ đã là kỷ niệm khó quên. 
+                        Những áng mây sớm mai chứng kiến hai chúng tôi bắt đầu quen với việc có nhau.
                     </p>
-                  </div>
-                  <!-- END of TITLE & EXCERPT -->
                 </div>
-                <!--END of ITEM-3-->
-              </div>
-              <!--END of EVENTS CAROUSEL-->
+                <div class="timeline-date">04/10/2025</div>
             </div>
-          </div>
-          <!--END of ROW-2-->
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="story-image-wrapper">
+                        <img src="images/story-4.jpeg" alt="Lời cầu hôn" class="story-image" loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'story-image-placeholder\'>📷 Lời cầu hôn<br>Thêm ảnh: images/story-4.jpeg</div>';">
+                    </div>
+                    <h3 class="timeline-title">Lời Cầu Hôn</h3>
+                    <p class="timeline-text">
+                        Tại Đà Nẵng, giữa tiếng sóng biển dịu dàng, anh đã trao nhẫn cho em. 
+                        Nụ cười rạng rỡ của em đã là câu trả lời cho tình yêu chân thành này.
+                    </p>
+                </div>
+                <div class="timeline-date">01/11/2025</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="story-image-wrapper">
+                        <img src="images/story-5.jpeg" alt="Lễ đính hôn" class="story-image" loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'story-image-placeholder\'>📷 Lễ đính hôn<br>Thêm ảnh: images/story-5.jpeg</div>';">
+                    </div>
+                    <h3 class="timeline-title">Lễ Đính Hôn</h3>
+                    <p class="timeline-text">
+                        Lễ đính hôn được tổ chức trong sự chứng kiến của gia đình hai bên. 
+                        Đây là dấu mốc quan trọng, mở ra hành trình hôn nhân của chúng tôi.
+                    </p>
+                </div>
+                <div class="timeline-date">30/11/2025</div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- FRIENDS WISHES SECTION -->
-      <section id="wishes-section">
-        <div class="container">
-          <!-- ROW-1 -->
-          <div class="row">
-            <!-- SECTION TITLE -->
-            <div class="col-md-offset-2 col-md-8 text-center">
-              <div class="section-title animation fadeInUp">
-                <h2>LỜI CHÚC PHÚC</h2>
+    <!-- Event Section -->
+    <section id="event">
+        <h2 class="section-title animate-on-scroll">Thời Gian & Địa Điểm</h2>
+        <p class="section-subtitle animate-on-scroll">Rất hân hạnh được đón tiếp quý khách</p>
 
-                <p style="line-height: 1.7; margin-bottom: 20px;">
-                  Những lời chúc chân thành từ bạn bè và người thân yêu.
+        <div class="event-cards">
+            <div class="event-card animate-on-scroll">
+                <div class="event-icon">❀</div>
+                <h3 class="event-title">Tiệc Nhà Gái</h3>
+                <p class="event-date">Chủ Nhật, 08/03/2026</p>
+                <p class="event-time">Nhằm ngày 20 tháng 1 năm Bính Ngọ</p>
+                <div class="decorative-line"></div>
+                <p class="event-location">
+                    <strong>Nhà hàng Thanh Thanh</strong><br>
+                    <span class="event-address">
+                        Đội 7, thôn Giang Chế,<br>
+                        xã Vinh Lộc, TP Huế
+                    </span>
                 </p>
-                <p style="line-height: 1.7;">
-                  Cảm ơn vì đã chia sẻ tình cảm và những lời chúc tốt đẹp cùng chúng tôi trong ngày trọng đại này!
-                </p>
-              </div>
             </div>
-          </div>
-          <!-- END of ROW-1 -->
 
-          <!-- ROW-1 -->
-          <div class="row">
-            <div class="col-md-offset-1 col-md-10 text-center">
-              <div id="friends-wishes" class="owl-carousel">
-              </div>
+            <div class="event-card animate-on-scroll">
+                <div class="event-icon">❀</div>
+                <h3 class="event-title">Tiệc Nhà Trai</h3>
+                <p class="event-date">Thứ Ba, 10/03/2026</p>
+                <p class="event-time">Nhằm ngày 22 tháng 1 năm Bính Ngọ</p>
+                <div class="decorative-line"></div>
+                <p class="event-location">
+                    <strong>Nhà hàng tiệc cưới Trung Hải</strong><br>
+                    <span class="event-address">
+                        QL49B, thôn Phụng Chánh 1,<br>
+                        xã Vinh Lộc, TP. Huế
+                    </span>
+                </p>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- RSVP SECTION -->
-      <section id="rsvp-section">
-        <div class="container">
-          <!-- ROW-1 -->
-          <div class="row">
-            <!-- SECTION TITLE -->
-            <div class="col-md-offset-2 col-md-8 text-center">
-              <div class="section-title animation fadeInUp">
-                <h2>XÁC NHẬN THAM DỰ</h2>
+    <!-- Map Section -->
+    <section id="map">
+        <h2 class="section-title animate-on-scroll">Bản Đồ Chỉ Đường</h2>
+        <p class="section-subtitle animate-on-scroll">Tìm đường đến địa điểm tổ chức</p>
 
-                <p style="line-height: 1.7; margin-bottom: 15px;">
-                  Chúng tôi rất mong được chia sẻ niềm vui trong ngày đặc biệt này cùng quý vị!
-                </p>
-                <p style="line-height: 1.7;">
-                  Xin vui lòng cho chúng tôi biết khả năng tham dự của quý vị bằng cách điền vào mẫu dưới đây. 
-                  Sự hiện diện của quý vị sẽ làm cho ngày cưới của chúng tôi trọn vẹn và ý nghĩa hơn. 
-                  Xin chân thành cảm ơn!
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- END of ROW-1 -->
-
-          <!-- FORM -->
-          <div class="row">
-            <div id="message" class="col-md-12 message">
-              <!-- Show Message -->
+        <div class="map-container animate-on-scroll">
+            <h4 class="map-title">Nhà hàng Thanh Thanh (Tiệc Nhà Gái)</h4>
+            <div class="map-wrapper">
+                <div id="bride-party-map-canvas" class="map-canvas"></div>
             </div>
 
-            <form method="post"
-                  action="https://script.google.com/macros/s/AKfycbwgalEQxxqSoJQXsq8RV4j6az0L6X7jNmCq1I9mZr-11OQNKxgj4y05q2cd-Sc1KqbT/exec"
-                  id="rsvpform"
-                  class="gform">
-              <div class="row">
-                <div class="col-md-6">
-                  <div id="name" class="form-group">
-                    <label for="name">*HỌ TÊN</label>
-                    <input
-                      type="text"
-                      class="form-control ajax-input"
-                      id="name"
-                      name="name"
-                      placeholder=""
-                      data-required="Vui lòng nhập họ tên"
-                    />
-                  </div>
-                  <div id="email" class="form-group">
-                    <label for="inputemail">*EMAIL</label>
-                    <input
-                      type="email"
-                      class="form-control ajax-input"
-                      id="email"
-                      name="email"
-                      value="no-email@gmail.com"
-                      data-required="Vui lòng nhập email"
-                    />
-                  </div>
-                  <div id="events" class="form-group">
-                    <label for="events">*TÔI SẼ THAM DỰ</label>
-                    <select
-                      multiple
-                      id="events"
-                      name="events"
-                      class="form-control ajax-input"
-                      data-required="Vui lòng chọn sự kiện"
-                    >
-                      <option>Tiệc trước đám cưới</option>
-                      <option>Tiệc nhà gái</option>
-                      <option>Tiệc nhà trai</option>
-                      <option>Không thể tham dự</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="message">LỜI NHẮN CỦA BẠN</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      class="form-control ajax-input"
-                      rows="14"
-                      placeholder="Gửi lời chúc đến cô dâu & chú rể..."
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 text-center">
-                <div class="form-group">
-                  <input
-                    type="submit"
-                    id="submitButton"
-                    name="submitButton"
-                    class="button medium reverse"
-                    value="GỬI XÁC NHẬN"
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
+            <h4 class="map-title">Nhà hàng Trung Hải (Tiệc Nhà Trai)</h4>
+            <div class="map-wrapper">
+                <div id="groom-party-map-canvas" class="map-canvas"></div>
+            </div>
+
+            <p class="map-note">
+                📍 Nhấn vào marker trên bản đồ để xem thông tin chi tiết và chỉ đường.
+            </p>
         </div>
-      </section>
+    </section>
 
-    <!-- FOOTER SECTION -->
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title animate-on-scroll">Thư Viện Ảnh</h2>
+        <p class="section-subtitle animate-on-scroll">Những khoảnh khắc đẹp của chúng tôi</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(0)">
+                <img src="images/gallery-1.jpeg" alt="Ảnh cưới 1" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 1</div>';">
+            </div>
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(1)">
+                <img src="images/gallery-2.jpeg" alt="Ảnh cưới 2" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 2</div>';">
+            </div>
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(2)">
+                <img src="images/gallery-3.jpeg" alt="Ảnh cưới 3" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 3</div>';">
+            </div>
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(3)">
+                <img src="images/gallery-4.jpeg" alt="Ảnh cưới 4" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 4</div>';">
+            </div>
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(4)">
+                <img src="images/gallery-5.jpeg" alt="Ảnh cưới 5" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 5</div>';">
+            </div>
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(5)">
+                <img src="images/gallery-6.jpeg" alt="Ảnh cưới 6" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 6</div>';">
+            </div>
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(6)">
+                <img src="images/gallery-7.jpeg" alt="Ảnh cưới 7" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 7</div>';">
+            </div>
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(7)">
+                <img src="images/gallery-8.jpeg" alt="Ảnh cưới 8" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 8</div>';">
+            </div>
+            <div class="gallery-item animate-on-scroll" onclick="openLightbox(8)">
+                <img src="images/gallery-9.jpeg" alt="Ảnh cưới 9" class="gallery-placeholder" loading="lazy"
+                     onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>Ảnh 9</div>';">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-close" onclick="closeLightbox(event)">×</div>
+        <div class="lightbox-nav lightbox-prev" onclick="changeImage(-1, event)">‹</div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Ảnh phóng to" class="lightbox-image">
+        </div>
+        <div class="lightbox-nav lightbox-next" onclick="changeImage(1, event)">›</div>
+    </div>
+
+    <!-- Donate Section -->
+    <section id="donate">
+        <div class="floral-corner top-left">✿</div>
+        <div class="floral-corner top-right">✿</div>
+        <h2 class="section-title animate-on-scroll">Mừng Cưới</h2>
+        <p class="section-subtitle animate-on-scroll">Nếu không thể đến tham dự, quý vị có thể gửi lời chúc qua hình thức chuyển khoản</p>
+
+        <div class="donate-container">
+            <div class="donate-card animate-on-scroll">
+                <div class="donate-avatar">♂</div>
+                <h3 class="donate-name">Lê Phước Vũ Tiến</h3>
+                <p class="donate-role">Chú Rể</p>
+                
+                <div class="qr-code" onclick="openQRModal('groom')" style="cursor: pointer;" title="Click để phóng to">
+                    <img src="images/qr-codes/groom-qr.jpeg" alt="QR Code chú rể" 
+                         onerror="this.parentElement.innerHTML='QR Code<br>(Thêm ảnh QR)';">
+                </div>
+
+                <div class="bank-info">
+                    <div class="bank-row">
+                        <span class="bank-label">Ngân hàng:</span>
+                        <span class="bank-value">Vietcombank</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Chủ tài khoản:</span>
+                        <span class="bank-value">LE PHUOC VU TIEN</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Số tài khoản:</span>
+                        <span class="bank-value account-number">0041000260163</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donate-card animate-on-scroll">
+                <div class="donate-avatar">♀</div>
+                <h3 class="donate-name">Lê Thị Xuân Giang</h3>
+                <p class="donate-role">Cô Dâu</p>
+                
+                <div class="qr-code" onclick="openQRModal('bride')" style="cursor: pointer;" title="Click để phóng to">
+                    <img src="images/bride-qr.jpeg" alt="QR Code cô dâu" 
+                         onerror="this.parentElement.innerHTML='QR Code<br>(Đang cập nhật)';">
+                </div>
+
+                <div class="bank-info">
+                    <div class="bank-row">
+                        <span class="bank-label">Ngân hàng:</span>
+                        <span class="bank-value">Đang cập nhật</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Chủ tài khoản:</span>
+                        <span class="bank-value">Đang cập nhật</span>
+                    </div>
+                    <div class="bank-row">
+                        <span class="bank-label">Số tài khoản:</span>
+                        <span class="bank-value">Đang cập nhật</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <div
-        class="image-divider fixed-height"
-        style="background-image: url(images/slide-image-4.jpeg)"
-        data-stellar-background-ratio="0.5"
-      >
-        <div class="divider-overlay"></div>
-
-        <!-- Use Center Middle Alignment to align middle the content for fixed-height parallax -->
-        <div class="alignment">
-          <div class="v-align center-middle">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="animation fadeInUp">
-                    <div id="thank-you">
-                      <div id="thank">Cảm</div>
-                      <div id="you">Ơn</div>
-                    </div>
-                  </div>
-
-                  <div class="heart-divider animation delay1 fadeInUp">
-                    <span class="white-line"></span>
-                    <i class="de-icon-heart pink-heart"></i>
-                    <i class="de-icon-heart white-heart"></i>
-                    <span class="white-line"></span>
-                  </div>
-
-                  <div
-                    id="footer-couple-name"
-                    class="animation delay1 fadeInUp"
-                  >
-                    Tiến & Giang
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <p class="footer-message">Thank You</p>
+        <div class="decorative-line"></div>
+        <p class="footer-names">VŨ TIẾN & XUÂN GIANG</p>
+        <p class="footer-text">
+            Chúng tôi rất biết ơn sự quan tâm và yêu thương của quý vị.<br>
+            Sự hiện diện của quý vị là món quà ý nghĩa nhất dành cho chúng tôi.
+        </p>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <!-- Pace -->
-    <script src="js/pace/pace.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap/bootstrap.js"></script>
-    <!-- Modernizr -->
-    <script src="js/modernizr/modernizr.js"></script>
-    <!-- Device JS -->
-    <script src="js/devicejs/device.js"></script>
-    <!-- TinyNav -->
-    <script src="js/tinynav/tinynav.min.js"></script>
-    <!-- SmoothScroll -->
-    <script src="js/smoothscroll/jquery.smooth-scroll.js"></script>
-    <!-- Flexslider -->
-    <script src="js/flexslider/jquery.flexslider.js"></script>
-    <!-- Sticky -->
-    <script src="js/sticky/jquery.sticky.js"></script>
-    <!-- Waypoint -->
-    <script src="js/waypoint/jquery.waypoints.min.js"></script>
-    <!-- DoubleTapToGo -->
-    <script src="js/jquery-ui-widget/jquery.ui.widget.js"></script>
-    <script src="js/jquery-doubletaptogo/jquery.dcd.doubletaptogo.js"></script>
-    <!-- Vide -->
-    <script src="js/vide/jquery.vide.js"></script>
-    <!-- Stellar -->
-    <script src="js/stellar/jquery.stellar.js"></script>
-    <!-- Masonry -->
-    <script src="js/masonry/masonry.pkgd.min.js"></script>
-    <!-- Countdown -->
-    <script src="js/countdown/jquery.plugin.js"></script>
-    <script src="js/countdown/jquery.countdown.js"></script>
-    <!-- Magnific Popup -->
-    <script src="js/magnific-popup/jquery.magnific-popup.js"></script>
-    <!-- Owl Carousel -->
-    <script src="js/owlcarousel/owl.carousel.js"></script>
-    <!-- Google Map -->
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyDGhGk3DTCkjF1EUxpMm5ypFoQ-ecrS2gY", v: "weekly"});
-    </script>
-    <!-- RSVP -->
-    <script src="js/rsvp/rsvp.js"></script>
-    <!-- Wishes -->
-    <script src="js/wishes/wishes.js"></script>
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer" onclick="toggleMusic()" title="Nhấn để bật/tắt nhạc">
+        <span class="music-icon" id="musicIcon">🎵</span>
+    </div>
 
-    <!-- Custom Core Script -->
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/map-script.js"></script>
-    <!-- Custom Additional Script -->
-    <script type="text/javascript" src="js/main-slider-fade.js"></script>
-  </body>
+    <!-- Audio Element -->
+    <audio id="weddingMusic" loop>
+        <source src="assets/wedding-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- QR Modal -->
+    <div id="qrModal" class="qr-modal" onclick="closeQRModal(event)">
+        <div class="qr-modal-content" onclick="event.stopPropagation()">
+            <div class="qr-modal-close" onclick="closeQRModal(event)">×</div>
+            <img id="qrModalImg" src="" alt="QR Code phóng to" class="qr-large">
+        </div>
+    </div>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGhGk3DTCkjF1EUxpMm5ypFoQ-ecrS2gY&v=weekly" defer></script>
+    
+    <!-- JavaScript Files -->
+    <script src="script.js" defer></script>
+    <script src="map-script.js" defer></script>
+</body>
 </html>
