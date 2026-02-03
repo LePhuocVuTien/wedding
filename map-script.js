@@ -35,7 +35,7 @@ async function initMap(mapElementId, center, title, infoContent) {
   var map = new google.maps.Map(document.getElementById(mapElementId), mapOptions);
 
   const img = document.createElement("img");
-  img.src = "images/destination.jpg"; // icon 
+  img.src = `images/destination.jpg`; // icon 
   img.style.width = "40px";
   img.style.height = "40px";
 
