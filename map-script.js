@@ -35,9 +35,10 @@ async function initMap(mapElementId, center, title, infoContent) {
   var map = new google.maps.Map(document.getElementById(mapElementId), mapOptions);
 
   const img = document.createElement("img");
-  img.src = `images/destination.jpg`; // icon 
-  img.style.width = "40px";
-  img.style.height = "40px";
+  img.src = `images/destination.png`; // Custom icon
+  img.style.width = "50px";
+  img.style.height = "50px";
+  img.style.objectFit = "contain";
 
   const marker = new google.maps.marker.AdvancedMarkerElement({
     map: map,
