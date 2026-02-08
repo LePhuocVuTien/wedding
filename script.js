@@ -8,7 +8,13 @@ const galleryImages = [
     'images/gallery-6.jpeg',
     'images/gallery-7.jpeg',
     'images/gallery-8.jpeg',
-    'images/gallery-9.jpeg'
+    'images/gallery-9.jpeg',
+    'images/gallery-10.jpeg',
+    'images/gallery-11.jpeg',
+    'images/gallery-12.jpeg',
+    'images/gallery-13.jpeg',
+    'images/gallery-14.jpeg',
+    'images/gallery-15.jpeg'
 ];
 
 let currentImageIndex = 0;
