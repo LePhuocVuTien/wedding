@@ -14,7 +14,16 @@ const galleryImages = [
     'images/gallery-12.jpeg',
     'images/gallery-13.jpeg',
     'images/gallery-14.jpeg',
-    'images/gallery-15.jpeg'
+    'images/gallery-15.jpeg',
+    'images/gallery-16.jpeg',
+    'images/gallery-17.jpeg',
+    'images/gallery-18.jpeg',
+    'images/gallery-19.jpeg',
+    'images/gallery-20.jpeg',
+    'images/gallery-21.jpeg',
+    'images/gallery-22.jpeg',
+    'images/gallery-23.jpeg',
+    'images/gallery-24.jpeg'
 ];
 
 let currentImageIndex = 0;
@@ -281,4 +290,31 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => {
 // Timeline items scroll animation - with staggered delays
 document.querySelectorAll('.timeline-item').forEach((item, index) => {
     item.style.animationDelay = `${index * 0.2}s`;
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryGrid = document.querySelector('.gallery-grid');
+    if (!galleryGrid) return;
+
+    for (let i = 0; i < galleryImages.length; i++) {
+        const item = document.createElement('div');
+        item.className = 'gallery-item animate-on-scroll';
+        item.onclick = () => openLightbox(i);
+
+        const img = document.createElement('img');
+        img.src = galleryImages[i];
+        img.alt = `Ảnh cưới ${i + 1}`;
+        img.loading = 'lazy';
+        img.onerror = function () {
+            const fallback = document.createElement('div');
+            fallback.textContent = `Ảnh ${i + 1}`;
+            this.replaceWith(fallback);
+        };
+
+        item.appendChild(img);
+        galleryGrid.appendChild(item);
+
+        // Observe ngay sau khi tạo
+        observer.observe(item);
+    }
 });
